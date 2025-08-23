@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Q3 - For/In Loop</title>
+    <script>
+      function showLoop() {
+        let person = { fname: "John", lname: "Doe", age: 25 };
+        let text = "";
+        for (let key in person) {
+          text += key + ": " + person[key] + "<br>";
+        }
+        document.getElementById("output").innerHTML = text;
+      }
+    </script>
+  </head>
+  <body onload="showLoop()">
+    <h2>Q3: For/In Loop Example</h2>
+    <div id="output"></div>
+  </body>
+</html>

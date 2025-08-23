@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q5 - Prototypes</title>
+  </head>
+  <body>
+    <h2>Q5: Prototypes Example</h2>
+    <div id="output"></div>
+
+    <script>
+      function Person(first, last) {
+        this.firstName = first;
+        this.lastName = last;
+      }
+
+      // Add new property using prototype
+      Person.prototype.fullName = function () {
+        return this.firstName + " " + this.lastName;
+      };
+
+      let p = new Person("Farhan", "Aaqil);
+      document.getElementById("output").innerText =
+        "Full Name: " + p.fullName();
+    </script>
+  </body>
+</html>

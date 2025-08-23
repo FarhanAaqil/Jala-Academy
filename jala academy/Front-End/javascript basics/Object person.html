@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Q4 - Object</title>
+  </head>
+  <body>
+    <h2>Q4: Object Person Example</h2>
+    <div id="output"></div>
+
+    <script>
+      // Object with properties
+      var person = { firstname: "Alice", lastname: "Smith" };
+
+      // Access in two ways
+      var dotNotation = person.firstname + " " + person.lastname;
+      var bracketNotation = person["firstname"] + " " + person["lastname"];
+
+      // Print in HTML
+      document.getElementById("output").innerHTML =
+        "Dot Notation: " +
+        dotNotation +
+        "<br>" +
+        "Bracket Notation: " +
+        bracketNotation;
+    </script>
+  </body>
+</html>

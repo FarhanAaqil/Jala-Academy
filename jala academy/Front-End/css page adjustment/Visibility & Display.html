@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CSS Q2 - Visibility & Display</title>
+    <style>
+      .hidden {
+        visibility: hidden;
+      }
+      .visible {
+        visibility: visible;
+      }
+      .collapse {
+        visibility: collapse;
+      }
+
+      .none {
+        display: none;
+      }
+      .inline {
+        display: inline;
+      }
+      .block {
+        display: block;
+      }
+      .contents {
+        display: contents;
+      }
+      .list-item {
+        display: list-item;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Q2: Visibility & Display</h2>
+
+    <p class="hidden">This text is hidden (takes space).</p>
+    <p class="visible">This text is visible.</p>
+    <p class="collapse">This text is collapsed (mainly for tables).</p>
+
+    <div class="none">This text is display:none (no space).</div>
+    <div class="inline">Inline</div>
+    <div class="inline">Elements</div>
+    <div class="block">This is block.</div>
+    <div class="contents"><p>Contents visible, parent box removed.</p></div>
+    <div class="list-item">This is list-item.</div>
+  </body>
+</html>

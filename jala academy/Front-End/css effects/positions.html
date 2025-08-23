@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q3 - CSS Positions (Rewritten)</title>
+    <style>
+      .box {
+        padding: 10px;
+        margin: 10px 0;
+        color: white;
+        font-weight: bold;
+      }
+      .static {
+        position: static;
+        background: gray;
+      }
+      .relative {
+        position: relative;
+        left: 30px;
+        background: blue;
+      }
+      .container {
+        position: relative;
+        height: 150px;
+        border: 2px dashed black;
+        margin: 20px 0;
+      }
+      .absolute {
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        background: purple;
+      }
+      .sticky {
+        position: sticky;
+        top: 0;
+        background: green;
+      }
+      .fixed {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Q3: CSS Position Examples</h2>
+
+    <div class="box static">Static (default)</div>
+
+    <div class="box relative">Relative (moved 30px right)</div>
+
+    <div class="sticky box">Sticky (sticks to top when scrolling)</div>
+
+    <div class="container">
+      <div class="box absolute">Absolute (inside container)</div>
+    </div>
+
+    <div class="box fixed">Fixed (bottom-right corner)</div>
+
+    <!-- Spacer to allow scrolling -->
+    <div style="height: 1000px"></div>
+  </body>
+</html>

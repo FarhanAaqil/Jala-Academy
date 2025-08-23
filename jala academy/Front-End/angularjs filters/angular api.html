@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AngularJS Q4 - API</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function ($scope) {
+        var text = "AngularJS Example";
+        $scope.lower = angular.lowercase(text);
+        $scope.upper = angular.uppercase(text);
+      });
+    </script>
+  </head>
+  <body ng-controller="myCtrl">
+    <h2>Q4: AngularJS API</h2>
+    <p>Lowercase: {{lower}}</p>
+    <p>Uppercase: {{upper}}</p>
+  </body>
+</html>

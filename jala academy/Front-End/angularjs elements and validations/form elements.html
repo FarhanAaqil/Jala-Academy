@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q1 - AngularJS Form Elements</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("formCtrl", function ($scope) {
+        $scope.gender = "Male";
+        $scope.skills = { html: false, css: false, js: false };
+      });
+    </script>
+  </head>
+  <body ng-controller="formCtrl">
+    <h2>Q1: AngularJS Form Elements</h2>
+    <form>
+      <label>Textbox: <input type="text" ng-model="name" /></label><br /><br />
+
+      <label
+        >Selectbox:
+        <select ng-model="country">
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+        </select> </label
+      ><br /><br />
+
+      <label>Radio Buttons:</label>
+      <label><input type="radio" ng-model="gender" value="Male" /> Male</label>
+      <label
+        ><input type="radio" ng-model="gender" value="Female" /> Female</label
+      ><br /><br />
+
+      <label>Checkbox:</label>
+      <label><input type="checkbox" ng-model="skills.html" /> HTML</label>
+      <label><input type="checkbox" ng-model="skills.css" /> CSS</label>
+      <label><input type="checkbox" ng-model="skills.js" /> JS</label>
+    </form>
+
+    <h3>Output:</h3>
+    <p>Name: {{name}}</p>
+    <p>Country: {{country}}</p>
+    <p>Gender: {{gender}}</p>
+    <p>Skills: HTML={{skills.html}}, CSS={{skills.css}}, JS={{skills.js}}</p>
+  </body>
+</html>

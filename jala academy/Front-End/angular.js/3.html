@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="bindDemo">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-controller="BindCtrl" ng-init="initVals()">
+    <input ng-model="name" />
+    <p>Hello, {{name}}</p>
+
+    <ul>
+      <li ng-repeat="lang in languages">{{lang}}</li>
+    </ul>
+
+    <div ng-include="'content.html'"></div>
+  </body>
+  <script>
+    angular.module("bindDemo", []).controller("BindCtrl", function ($scope) {
+      $scope.initVals = function () {
+        $scope.name = "Student";
+        $scope.languages = ["JavaScript", "Python", "AngularJS"];
+      };
+    });
+  </script>
+</html>

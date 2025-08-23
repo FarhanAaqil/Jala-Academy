@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q2 - call() and apply()</title>
+  </head>
+  <body>
+    <h2>Q2: call() and apply()</h2>
+    <div id="output"></div>
+
+    <script>
+      function greet(greeting, punctuation) {
+        return greeting + " " + this.name + punctuation;
+      }
+
+      var person = { name: "FarhanS" };
+
+      var callResult = greet.call(person, "Hello", "!");
+      var applyResult = greet.apply(person, ["Hi", "?"]);
+
+      document.getElementById("output").innerHTML =
+        "Using call(): " +
+        callResult +
+        "<br>" +
+        "Using apply(): " +
+        applyResult;
+    </script>
+  </body>
+</html>

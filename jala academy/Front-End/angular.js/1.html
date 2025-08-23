@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="colorApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body ng-controller="ColorCtrl">
+    <p>Sum: {{a + b}}</p>
+    <input type="number" ng-model="a" />
+    <input type="number" ng-model="b" /><br /><br />
+
+    <input
+      type="text"
+      ng-model="color"
+      placeholder="Enter color name or hex"
+      ng-style="{'background-color': color}"
+    />
+    <p>Background color: {{color}}</p>
+  </body>
+  <script>
+    angular.module("colorApp", []).controller("ColorCtrl", function ($scope) {
+      $scope.a = 0;
+      $scope.b = 0;
+      $scope.color = "";
+    });
+  </script>
+</html>

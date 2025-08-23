@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AngularJS Q2 - Services</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      var app = angular.module("myApp", []);
+
+      // Custom Service
+      app.service("customService", function () {
+        this.greet = function (name) {
+          return "Hello, " + name + "!";
+        };
+      });
+
+      app.controller(
+        "myCtrl",
+        function ($scope, $location, $timeout, customService) {
+          $scope.url = $location.absUrl();
+
+          // $timeout example
+          $timeout(function () {
+            $scope.message = "This message appeared after 2 seconds!";
+          }, 2000);
+
+          // Using custom service
+          $scope.greeting = customService.greet("AngularJS User");
+        }
+      );
+    </script>
+  </head>
+  <body ng-controller="myCtrl">
+    <h2>Q2: AngularJS Services</h2>
+    <p>Current URL: {{url}}</p>
+    <p>{{message}}</p>
+    <p>{{greeting}}</p>
+  </body>
+</html>

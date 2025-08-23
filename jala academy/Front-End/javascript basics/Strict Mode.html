@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Q6 - Strict Mode</title>
+  </head>
+  <body>
+    <h2>Q6: Strict Mode Example</h2>
+    <div id="output"></div>
+
+    <script>
+      "use strict";
+      try {
+        x = 50; // ❌ Error because x is not declared
+      } catch (err) {
+        document.getElementById("output").innerHTML =
+          "Strict Mode Error: " + err.message;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JS Q5 - Hoisting</title>
+  </head>
+  <body>
+    <h2>Q5: Variable Hoisting Example</h2>
+    <div id="output"></div>
+
+    <script>
+      // Demonstrate hoisting
+      var text = "";
+      text += "Value of x before declaration: " + x + "<br>"; // undefined
+      var x = 10;
+      text += "Value of x after declaration: " + x;
+
+      // Print in HTML
+      document.getElementById("output").innerHTML = text;
+    </script>
+  </body>
+</html>

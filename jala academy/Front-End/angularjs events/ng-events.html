@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q3 - AngularJS Events</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function ($scope) {
+        $scope.message = "";
+        $scope.showClick = function () {
+          $scope.message = "Button Clicked!";
+        };
+        $scope.showMouseMove = function ($event) {
+          $scope.message =
+            "Mouse at X: " + $event.clientX + ", Y: " + $event.clientY;
+        };
+      });
+    </script>
+  </head>
+  <body ng-controller="myCtrl">
+    <h2>Q3: AngularJS Event Handling</h2>
+
+    <button ng-click="showClick()">Click Me</button><br /><br />
+
+    <div
+      ng-mousemove="showMouseMove($event)"
+      style="
+        border: 1px solid black;
+        width: 300px;
+        height: 100px;
+        padding: 10px;
+      "
+    >
+      Move your mouse here
+    </div>
+
+    <p><b>Output:</b> {{message}}</p>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q2 - Animations & Pagination</title>
+    <style>
+      /* Animation */
+      @keyframes fadeMove {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .animate-box {
+        width: 200px;
+        height: 100px;
+        background: lightblue;
+        animation-name: fadeMove;
+        animation-duration: 3s;
+        animation-iteration-count: infinite;
+        animation-delay: 1s;
+      }
+
+      /* Pagination */
+      .pagination {
+        display: inline-block;
+      }
+      .pagination a {
+        color: black;
+        float: left;
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        border: 1px solid #ddd;
+        margin: 0 2px;
+      }
+      .pagination a:hover {
+        background-color: #4caf50;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Q2: Animation Example</h2>
+    <div class="animate-box"></div>
+
+    <h2>Q2: Pagination Example</h2>
+    <div class="pagination">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+    </div>
+  </body>
+</html>

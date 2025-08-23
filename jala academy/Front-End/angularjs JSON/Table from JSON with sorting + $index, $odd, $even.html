@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q1 - JSON Table with Filters</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function ($scope) {
+        $scope.students = [
+          { name: "Farhan", age: 22 },
+          { name: "Aaqil", age: 25 },
+          { name: "Durrani", age: 20 },
+          { name: "Nohel", age: 23 },
+        ];
+        $scope.sortKey = "name"; // default sort
+      });
+    </script>
+    <style>
+      .odd {
+        background-color: #f2f2f2;
+      }
+      .even {
+        background-color: #d9f9d9;
+      }
+    </style>
+  </head>
+  <body ng-controller="myCtrl">
+    <h2>Q1: Table from JSON</h2>
+
+    <label
+      >Sort By:
+      <select ng-model="sortKey">
+        <option value="name">Name</option>
+        <option value="age">Age</option>
+      </select>
+    </label>
+
+    <table border="1" cellpadding="10">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+      <tr
+        ng-repeat="s in students | orderBy:sortKey"
+        ng-class="$odd ? 'odd' : 'even'"
+      >
+        <td>{{$index + 1}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.age}}</td>
+      </tr>
+    </table>
+  </body>
+</html>

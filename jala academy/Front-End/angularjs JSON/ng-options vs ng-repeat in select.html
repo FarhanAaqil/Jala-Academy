@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q2 - ng-options vs ng-repeat</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function ($scope) {
+        $scope.countries = ["India", "USA", "UK", "Canada"];
+        $scope.selectedCountry1 = "";
+        $scope.selectedCountry2 = "";
+      });
+    </script>
+  </head>
+  <body ng-controller="myCtrl">
+    <h2>Q2: ng-options vs ng-repeat</h2>
+
+    <h3>Using ng-options:</h3>
+    <select
+      ng-model="selectedCountry1"
+      ng-options="c for c in countries"
+    ></select>
+    <p>Selected: {{selectedCountry1}}</p>
+
+    <h3>Using ng-repeat:</h3>
+    <select ng-model="selectedCountry2">
+      <option ng-repeat="c in countries" value="{{c}}">{{c}}</option>
+    </select>
+    <p>Selected: {{selectedCountry2}}</p>
+  </body>
+</html>

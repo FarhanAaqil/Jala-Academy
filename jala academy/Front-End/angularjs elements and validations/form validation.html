@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q2 - Form Validation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("formCtrl", function ($scope) {
+        $scope.user = {};
+      });
+      // Custom directive for age validation
+      app.directive("validAge", function () {
+        return {
+          require: "ngModel",
+          link: function (scope, element, attrs, ctrl) {
+            ctrl.$validators.validAge = function (value) {
+              return value >= 18; // must be at least 18
+            };
+          },
+        };
+      });
+    </script>
+  </head>
+  <body ng-controller="formCtrl">
+    <h2>Q2: Form Validation</h2>
+    <form name="myForm" novalidate>
+      <label
+        >Email:
+        <input type="email" name="email" ng-model="user.email" required />
+      </label>
+      <span
+        style="color: red"
+        ng-show="myForm.email.$touched && myForm.email.$invalid"
+      >
+        Invalid Email! </span
+      ><br /><br />
+
+      <label
+        >Age:
+        <input
+          type="number"
+          name="age"
+          ng-model="user.age"
+          valid-age
+          required
+        />
+      </label>
+      <span
+        style="color: red"
+        ng-show="myForm.age.$touched && myForm.age.$error.validAge"
+      >
+        Must be 18 or older </span
+      ><br /><br />
+
+      <button type="submit" ng-disabled="myForm.$invalid">Submit</button>
+    </form>
+  </body>
+</html>

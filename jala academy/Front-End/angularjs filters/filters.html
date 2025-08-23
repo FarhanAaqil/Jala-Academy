@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AngularJS Q1 - Filters</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      var app = angular.module("myApp", []);
+
+      // Custom filter
+      app.filter("reverse", function () {
+        return function (input) {
+          return input.split("").reverse().join("");
+        };
+      });
+
+      app.controller("myCtrl", function ($scope) {
+        $scope.name = "JALA Academy";
+        $scope.today = new Date();
+        $scope.amount = 12345.678;
+      });
+    </script>
+  </head>
+  <body ng-controller="myCtrl">
+    <h2>Q1: AngularJS Filters</h2>
+    <p>Original: {{name}}</p>
+    <p>Uppercase: {{name | uppercase}}</p>
+    <p>Lowercase: {{name | lowercase}}</p>
+    <p>Date: {{today | date:'fullDate'}}</p>
+    <p>Number: {{amount | number:2}}</p>
+    <p>Custom Reverse Filter: {{name | reverse}}</p>
+  </body>
+</html>

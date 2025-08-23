@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q4 - Getter & Setter Counter</title>
+  </head>
+  <body>
+    <h2>Q4: Counter with Getter & Setter</h2>
+    <button onclick="counter.value++">Increase</button>
+    <button onclick="counter.value=0">Reset</button>
+    <p id="output">0</p>
+
+    <script>
+      let _count = 0;
+      const counter = {
+        get value() {
+          return _count;
+        },
+        set value(val) {
+          _count = val;
+          document.getElementById("output").innerText = _count;
+        },
+      };
+    </script>
+  </body>
+</html>

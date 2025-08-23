@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q5 - Viewport & Media Queries</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      img,
+      video {
+        max-width: 100%;
+        height: auto;
+      }
+      @media (max-width: 600px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Q5: Viewport, Media Queries, Image & Video</h2>
+    <div class="grid">
+      <img src="https://www.w3schools.com/css/img_forest.jpg" alt="Forest" />
+      <video controls>
+        <source
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          type="video/mp4"
+        />
+      </video>
+    </div>
+  </body>
+</html>

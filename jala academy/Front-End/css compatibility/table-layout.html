@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q1 - Table Layout</title>
+    <style>
+      table {
+        border: 1px solid black;
+        width: 400px;
+        margin-bottom: 20px;
+      }
+      td {
+        border: 1px solid black;
+        padding: 10px;
+      }
+      .fixed {
+        table-layout: fixed;
+      }
+      .auto {
+        table-layout: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Q1: Table Layout</h2>
+
+    <h3>Fixed Layout</h3>
+    <table class="fixed">
+      <tr>
+        <td>Short</td>
+        <td>Very long content that will be cut off</td>
+      </tr>
+    </table>
+
+    <h3>Auto Layout (none)</h3>
+    <table class="auto">
+      <tr>
+        <td>Short</td>
+        <td>Very long content that stretches table</td>
+      </tr>
+    </table>
+  </body>
+</html>

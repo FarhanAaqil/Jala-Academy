@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q2 - DOM with ng-show, ng-hide, ng-disabled</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+      var app = angular.module("myApp", []);
+      app.controller("myCtrl", function ($scope) {
+        $scope.showBox = true;
+        $scope.isDisabled = false;
+      });
+    </script>
+  </head>
+  <body ng-controller="myCtrl">
+    <h2>Q2: DOM Manipulation</h2>
+
+    <button ng-click="showBox=!showBox">Toggle Box</button>
+    <div
+      ng-show="showBox"
+      style="border: 1px solid black; padding: 10px; margin: 10px"
+    >
+      This box can be shown/hidden
+    </div>
+
+    <button ng-hide="showBox">This button is hidden when box is visible</button
+    ><br /><br />
+
+    <input
+      type="text"
+      ng-disabled="isDisabled"
+      placeholder="Type something..."
+    />
+    <button ng-click="isDisabled=!isDisabled">Enable/Disable Input</button>
+  </body>
+</html>

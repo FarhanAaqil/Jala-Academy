@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML5 Basics - Q4 Pseudo Classes</title>
+    <style>
+      a:hover {
+        color: red; /* Changes color on hover */
+      }
+      p::first-letter {
+        font-size: 24px;
+        font-weight: bold;
+        color: blue;
+      }
+      p::selection {
+        background-color: yellow;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Pseudo Classes and Elements Example</h1>
+    <p>
+      This paragraph demonstrates pseudo elements. Select text to see effect.
+    </p>
+    <a href="#">Hover over this link</a>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="scopeApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller="FirstCtrl">
+      <p>$scope message: {{message}}</p>
+      <p>$rootScope global: {{globalMsg}}</p>
+    </div>
+    <div ng-controller="SecondCtrl">
+      <p>$scope message: {{message}}</p>
+      <p>$rootScope global: {{globalMsg}}</p>
+    </div>
+  </body>
+  <script>
+    angular
+      .module("scopeApp", [])
+      .run(function ($rootScope) {
+        $rootScope.globalMsg = "Hello from $rootScope!";
+      })
+      .controller("FirstCtrl", function ($scope) {
+        $scope.message = "First Controller Scope";
+      })
+      .controller("SecondCtrl", function ($scope) {
+        $scope.message = "Second Controller Scope";
+      });
+  </script>
+</html>

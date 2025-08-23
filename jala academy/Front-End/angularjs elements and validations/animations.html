@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="animCtrl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Q3 - ng-show/ng-hide Animations</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-animate.js"></script>
+    <style>
+      .fade.ng-hide {
+        transition: 0.5s linear all;
+        opacity: 0;
+      }
+      .fade {
+        transition: 0.5s linear all;
+        opacity: 1;
+      }
+    </style>
+    <script>
+      var app = angular.module("myApp", ["ngAnimate"]);
+      app.controller("animCtrl", function ($scope) {
+        $scope.showBox = true;
+      });
+    </script>
+  </head>
+  <body>
+    <h2>Q3: Animations with ng-show/ng-hide</h2>
+    <button ng-click="showBox=!showBox">Toggle Box</button>
+    <div
+      class="fade"
+      ng-show="showBox"
+      style="width: 200px; height: 100px; background: lightblue; margin: 20px"
+    >
+      Animated Box
+    </div>
+  </body>
+</html>
